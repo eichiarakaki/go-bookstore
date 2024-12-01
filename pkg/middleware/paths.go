@@ -7,8 +7,9 @@ import (
 
 // es un mapa que contiene las rutas permitidas. Solo las rutas listadas aquí estarán accesibles
 var allowedPaths = map[string]bool{
-	"/":      true,
-	"/book/": true,
+	"/":     true,
+	"/book": true,
+	"/api/": false, // User will have NO access to backend API (uncessesary to put the forbidden paths)
 }
 
 // checkAllowedPaths es un middleware que verifica si la ruta solicitada está en la lista de rutas permitidas. Si no lo está, responde con un error 403 Forbidden

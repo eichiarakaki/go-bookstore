@@ -13,3 +13,12 @@ func Homepage(w http.ResponseWriter, r *http.Request) {
 	}
 	tmpl.Execute(w, nil)
 }
+
+func Book(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("static/html/book.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	tmpl.Execute(w, nil)
+}

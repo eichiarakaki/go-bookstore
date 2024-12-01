@@ -13,7 +13,8 @@ func main() {
 	r := mux.NewRouter()
 	socket := "localhost:9010"
 
-	routes.RegisterBookStoreRoutes(r)
+	routes.RegisterAPIRoutes(r)
+	routes.RegisterWebRoutes(r)
 
 	// Crea un servidor de archivos que sirve archivos del directorio ./static.
 	fs := http.FileServer(http.Dir("./static"))
